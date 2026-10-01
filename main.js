@@ -114,5 +114,64 @@ function mostraResultado(){
     caixaAlternativas.textContent = ""; 
 }
 
+function aleatorio(lista) {
+        const posicao = Math.random()* lista.length;
+}
+
 mostraPergunta();
 
+function respostaSelecionada(opcaoSelecionada){
+        const afirmacoes = aleatorio(opcaoSelecionada.afirmacao);
+        historiaFinal += afirmacoes + " ";
+        atual++;
+        mostraPergunta();
+
+function mostraResultado() {
+        caixaPerguntas.textContent = "Em 2049...";
+        textoResultado.textContent = historiaFinal;
+        caixaAlternativas.textContent = "";
+        botaoJogarNovamente.addEventListener("click", jogaNovamente());
+function jogaNovamente(){
+    atual = 0;
+    historiaFinal = "";
+    caixaResultado.classList.remove("mostrar");
+    mostraPergunta();
+}function mostraResultado() {
+//código da função omitido
+    botaoJogarNovamente.addEventListener("click", jogaNovamente);
+}import {aleatorio, nome} from './aleatorio.js';caixaPerguntas.textContent = `Em 2049, ${nome}`;function substituiNome(){
+    for(const pergunta of perguntas){
+        pergunta.enunciado = pergunta.enunciado.replace(/você/g, nome);
+    }
+}substituiNome();function respostaSelecionada(opcaoSelecionada) {
+    const afirmacoes = aleatorio(opcaoSelecionada.afirmacao);
+    historiaFinal += afirmacoes + " ";
+    if (opcaoSelecionada.proxima != undefined) {
+        atual = opcaoSelecionada.proxima;
+    }
+    mostraPergunta();
+}function respostaSelecionada(opcaoSelecionada) {
+    const afirmacoes = aleatorio(opcaoSelecionada.afirmacao);
+    historiaFinal += afirmacoes + " ";
+    if (opcaoSelecionada.proxima != undefined) {
+        atual = opcaoSelecionada.proxima;
+    } else {
+        mostraResultado();
+        return;
+    }
+    mostraPergunta();
+}const botaoIniciar = document.querySelector(".iniciar-btn");
+const telaInicial = document.querySelector(".tela-inicial"); botaoIniciar.addEventListener('click', iniciaJogo);function iniciaJogo() {
+        atual = 0;
+        historiaFinal = "";
+        telaInicial.style.display = 'none';
+}function iniciaJogo() {
+        atual = 0;
+        historiaFinal = "";
+        telaInicial.style.display = 'none';
+        caixaPerguntas.classList.remove("mostrar");
+        caixaAlternativas.classList.remove("mostrar");
+        caixaResultado.classList.remove("mostrar");
+        mostraPergunta();
+}substituiNome();
+// removemos o mostraPergunta();
